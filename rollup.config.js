@@ -10,6 +10,11 @@ import { terser } from 'rollup-plugin-terser'
 import pkg from './package.json'
 
 export default {
+  external: ['react', 'react-dom'],
+  globals: {
+    react: 'React',
+    'react-dom': 'ReactDOM',
+  },
   input: 'src/lib/index.js',
   output: [
     {
